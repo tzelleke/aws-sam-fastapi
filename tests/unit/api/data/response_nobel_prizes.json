@@ -1,0 +1,21 @@
+{
+  "records": [
+    {
+      "award_year": 1901,
+      "category": "Chemistry",
+      "date_awarded": "1901-11-12",
+      "laureates": [
+        {
+          "id": 160,
+          "name": "Jacobus H. van 't Hoff",
+          "portion": "1",
+          "sort_order": 1,
+          "motivation": "in recognition of the extraordinary services he has rendered by the discovery of the laws of chemical dynamics and osmotic pressure in solutions"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "count": 670
+  }
+}

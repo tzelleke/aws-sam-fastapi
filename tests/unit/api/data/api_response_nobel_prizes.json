@@ -1,0 +1,67 @@
+{
+  "nobelPrizes": [
+    {
+      "awardYear": "1901",
+      "category": {
+        "en": "Chemistry",
+        "no": "Kjemi",
+        "se": "Kemi"
+      },
+      "categoryFullName": {
+        "en": "The Nobel Prize in Chemistry",
+        "no": "Nobelprisen i kjemi",
+        "se": "Nobelpriset i kemi"
+      },
+      "dateAwarded": "1901-11-12",
+      "prizeAmount": 150782,
+      "prizeAmountAdjusted": 8722510,
+      "links": [
+        {
+          "rel": "nobelPrize",
+          "href": "https://api.nobelprize.org/2/nobelPrize/che/1901",
+          "action": "GET",
+          "types": "application/json"
+        }
+      ],
+      "laureates": [
+        {
+          "id": "160",
+          "knownName": {
+            "en": "Jacobus H. van 't Hoff"
+          },
+          "fullName": {
+            "en": "Jacobus Henricus van 't Hoff"
+          },
+          "portion": "1",
+          "sortOrder": "1",
+          "motivation": {
+            "en": "in recognition of the extraordinary services he has rendered by the discovery of the laws of chemical dynamics and osmotic pressure in solutions",
+            "se": "såsom ett erkännande av den utomordentliga förtjänst han inlagt genom upptäckten av lagarna för den kemiska dynamiken och för det osmotiska trycket i lösningar"
+          },
+          "links": [
+            {
+              "rel": "laureate",
+              "href": "https://api.nobelprize.org/2/laureate/160",
+              "action": "GET",
+              "types": "application/json"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "limit": 1,
+    "count": 670,
+    "terms": "https://www.nobelprize.org/about/terms-of-use-for-api-nobelprize-org-and-data-nobelprize-org/",
+    "license": "https://www.nobelprize.org/about/terms-of-use-for-api-nobelprize-org-and-data-nobelprize-org/#licence",
+    "disclaimer": "https://www.nobelprize.org/about/terms-of-use-for-api-nobelprize-org-and-data-nobelprize-org/#disclaimer"
+  },
+  "links": {
+    "first": "https://masterdataapi.nobelprize.org/2.1/nobelPrizes?offset=0&limit=1",
+    "self": "https://masterdataapi.nobelprize.org/2.1/nobelPrizes?offset=0&limit=1",
+    "next": "https://masterdataapi.nobelprize.org/2.1/nobelPrizes?offset=1&limit=1",
+    "last": "https://masterdataapi.nobelprize.org/2.1/nobelPrizes?offset=664&limit=1"
+  }
+}

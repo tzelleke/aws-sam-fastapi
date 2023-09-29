@@ -1,0 +1,205 @@
+{
+  "laureates": [
+    {
+      "id": "745",
+      "knownName": {
+        "en": "A. Michael Spence",
+        "se": "A. Michael Spence"
+      },
+      "givenName": {
+        "en": "A. Michael",
+        "se": "A. Michael"
+      },
+      "familyName": {
+        "en": "Spence",
+        "se": "Spence"
+      },
+      "fullName": {
+        "en": "A. Michael Spence",
+        "se": "A. Michael Spence"
+      },
+      "fileName": "spence",
+      "gender": "male",
+      "birth": {
+        "date": "1943-00-00",
+        "place": {
+          "city": {
+            "en": "Montclair, NJ",
+            "no": "Montclair, NJ",
+            "se": "Montclair, NJ"
+          },
+          "country": {
+            "en": "USA",
+            "no": "USA",
+            "se": "USA"
+          },
+          "cityNow": {
+            "en": "Montclair, NJ",
+            "no": "Montclair, NJ",
+            "se": "Montclair, NJ",
+            "sameAs": [
+              "https://www.wikidata.org/wiki/Q678437",
+              "https://www.wikipedia.org/wiki/Montclair,_New_Jersey"
+            ],
+            "latitude": "40.825930",
+            "longitude": "-74.209030"
+          },
+          "countryNow": {
+            "en": "USA",
+            "no": "USA",
+            "se": "USA",
+            "sameAs": ["https://www.wikidata.org/wiki/Q30"]
+          },
+          "continent": {
+            "en": "North America",
+            "no": "Nord-Amerika",
+            "se": "Nordamerika"
+          },
+          "locationString": {
+            "en": "Montclair, NJ, USA",
+            "no": "Montclair, NJ, USA",
+            "se": "Montclair, NJ, USA"
+          }
+        }
+      },
+      "wikipedia": {
+        "slug": "Michael_Spence",
+        "english": "https://en.wikipedia.org/wiki/Michael_Spence"
+      },
+      "wikidata": {
+        "id": "Q157245",
+        "url": "https://www.wikidata.org/wiki/Q157245"
+      },
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q157245",
+        "https://en.wikipedia.org/wiki/Michael_Spence"
+      ],
+      "links": [
+        {
+          "rel": "laureate",
+          "href": "https://api.nobelprize.org/2/laureate/745",
+          "action": "GET",
+          "types": "application/json"
+        },
+        {
+          "rel": "external",
+          "href": "https://www.nobelprize.org/laureate/745",
+          "title": "A. Michael Spence - Facts",
+          "action": "GET",
+          "types": "text/html",
+          "class": ["laureate facts"]
+        }
+      ],
+      "nobelPrizes": [
+        {
+          "awardYear": "2001",
+          "category": {
+            "en": "Economic Sciences",
+            "no": "Økonomi",
+            "se": "Ekonomi"
+          },
+          "categoryFullName": {
+            "en": "The Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel",
+            "no": "Sveriges Riksbanks pris i økonomisk vitenskap til minne om Alfred Nobel",
+            "se": "Sveriges Riksbanks pris i ekonomisk vetenskap till Alfred Nobels minne"
+          },
+          "sortOrder": "2",
+          "portion": "1/3",
+          "dateAwarded": "2001-10-10",
+          "prizeStatus": "received",
+          "motivation": {
+            "en": "for their analyses of markets with asymmetric information",
+            "se": "för deras analys av marknader med assymetrisk informations"
+          },
+          "prizeAmount": 10000000,
+          "prizeAmountAdjusted": 13927869,
+          "affiliations": [
+            {
+              "name": {
+                "en": "Stanford University",
+                "no": "Stanford University",
+                "se": "Stanford University"
+              },
+              "nameNow": {
+                "en": "Stanford University"
+              },
+              "city": {
+                "en": "Stanford, CA",
+                "no": "Stanford, CA",
+                "se": "Stanford, CA"
+              },
+              "country": {
+                "en": "USA",
+                "no": "USA",
+                "se": "USA"
+              },
+              "cityNow": {
+                "en": "Stanford, CA",
+                "no": "Stanford, CA",
+                "se": "Stanford, CA",
+                "sameAs": [
+                  "https://www.wikidata.org/wiki/Q173813",
+                  "https://www.wikipedia.org/wiki/Stanford,_California"
+                ],
+                "latitude": "37.424734",
+                "longitude": "-122.163858"
+              },
+              "countryNow": {
+                "en": "USA",
+                "no": "USA",
+                "se": "USA",
+                "sameAs": ["https://www.wikidata.org/wiki/Q30"]
+              },
+              "continent": {
+                "en": "North America"
+              },
+              "locationString": {
+                "en": "Stanford, CA, USA",
+                "no": "Stanford, CA, USA",
+                "se": "Stanford, CA, USA"
+              }
+            }
+          ],
+          "links": [
+            {
+              "rel": "nobelPrize",
+              "href": "https://api.nobelprize.org/2/nobelPrize/eco/2001",
+              "action": "GET",
+              "types": "application/json"
+            },
+            {
+              "rel": "external",
+              "href": "https://www.nobelprize.org/prizes/economic-sciences/2001/spence/facts/",
+              "title": "A. Michael Spence - Facts",
+              "action": "GET",
+              "types": "text/html",
+              "class": ["laureate facts"]
+            },
+            {
+              "rel": "external",
+              "href": "https://www.nobelprize.org/prizes/economic-sciences/2001/summary/",
+              "title": "The Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel 2001",
+              "action": "GET",
+              "types": "text/html",
+              "class": ["prize summary"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "limit": 1,
+    "count": 992,
+    "terms": "https://www.nobelprize.org/about/terms-of-use-for-api-nobelprize-org-and-data-nobelprize-org/",
+    "license": "https://www.nobelprize.org/about/terms-of-use-for-api-nobelprize-org-and-data-nobelprize-org/#licence",
+    "disclaimer": "https://www.nobelprize.org/about/terms-of-use-for-api-nobelprize-org-and-data-nobelprize-org/#disclaimer"
+  },
+  "links": {
+    "first": "https://masterdataapi.nobelprize.org/2.1/laureates?offset=0&limit=1",
+    "self": "https://masterdataapi.nobelprize.org/2.1/laureates?offset=0&limit=1",
+    "next": "https://masterdataapi.nobelprize.org/2.1/laureates?offset=1&limit=1",
+    "last": "https://masterdataapi.nobelprize.org/2.1/laureates?offset=992&limit=1"
+  }
+}

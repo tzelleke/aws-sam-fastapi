@@ -12,12 +12,13 @@ ENABLE_SETTINGS_CACHE = os.getenv("ENABLE_SETTINGS_CACHE", "TRUE").lower() == "t
 
 
 class Settings(BaseSettings):
-    app_name: str = "FastAPI AWS SAM"
+    app_name: str = "Nobel Prize API"
     version: str = "0.1.0"
     log_level: str = Field(default="INFO")
     root_path: str = Field(default="/Prod")
     frontend_dir: Path = Field(default=Path(__file__).parent.parent.parent / "frontend")
     aws_sam_local: bool = Field(default=False)
+    nobel_prize_api_url: str = Field(default="https://api.nobelprize.org/2.1")
 
     def __init__(self, **data) -> None:
         super().__init__(**data)

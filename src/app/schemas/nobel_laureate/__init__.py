@@ -1,0 +1,3 @@
+from .compact_model import NobelLaureateCompact
+from .nobel_laureate import NobelLaureate
+from .nobel_laureates_response import NobelLaureatesResponse
