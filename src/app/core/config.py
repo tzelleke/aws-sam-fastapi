@@ -1,9 +1,13 @@
 from functools import lru_cache
+import os
 
 from pydantic import (
     BaseSettings,
     Field,
 )
+
+# See: https://hindenes.com/testing-fastapi-basesettings
+ENABLE_SETTINGS_CACHE = os.getenv("ENABLE_SETTINGS_CACHE", "TRUE").lower() == "true"
 
 
 class Settings(BaseSettings):
@@ -21,5 +25,11 @@ class Settings(BaseSettings):
 
 
 @lru_cache
+def get_cached_settings() -> Settings:
+    return Settings()
+
+
 def get_settings() -> Settings:
+    if ENABLE_SETTINGS_CACHE:
+        return get_cached_settings()
     return Settings()
