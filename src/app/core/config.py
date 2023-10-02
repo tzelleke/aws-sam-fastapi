@@ -1,5 +1,6 @@
 from functools import lru_cache
 import os
+from pathlib import Path
 
 from pydantic import (
     BaseSettings,
@@ -15,6 +16,7 @@ class Settings(BaseSettings):
     version: str = "0.1.0"
     log_level: str = Field(default="INFO")
     root_path: str = Field(default="/Prod")
+    frontend_dir: Path = Field(default=Path(__file__).parent.parent.parent / "frontend")
     aws_sam_local: bool = Field(default=False)
 
     def __init__(self, **data) -> None:

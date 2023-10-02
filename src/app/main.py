@@ -19,6 +19,7 @@ from app.core.tags import (
     tags_metadata,
 )
 from app.core.util import logger
+from app.frontend import mount_frontend
 
 app = FastAPI(
     root_path=get_settings().root_path,
@@ -44,12 +45,7 @@ async def healthcheck() -> dict[str, str]:
     return {"status": "OK"}
 
 
-@app.get("/", tags=[Tags.ROOT], description="Root")
-# @tracer.capture_method
-async def root() -> dict[str, str]:
-    # metrics.add_metric(name="RootInvocations", unit=MetricUnit.Count, value=1)
-    logger.info("root() - HTTP 200")
-    return {"message": "Hello World!"}
+mount_frontend(app, build_dir=get_settings().frontend_dir)
 
 
 @logger.inject_lambda_context(correlation_id_path=correlation_paths.API_GATEWAY_REST)
