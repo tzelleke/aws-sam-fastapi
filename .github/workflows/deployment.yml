@@ -1,0 +1,72 @@
+name: Deployment
+
+on: workflow_dispatch
+
+env:
+  AWS_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+  AWS_S3_ARTIFACTS_BUCKET: ${{ vars.AWS_S3_ARTIFACTS_BUCKET }}
+  AWS_REGION: eu-central-1
+  AWS_PIPELINE_ROLE: aws-sam-fastapi-github-actions-role
+  AWS_CLOUD_FORMATION_ROLE: cloud-formation-execution-role
+  STACK_NAME: sam-fastapi
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      #----------------------------------------------
+      #       check-out repo
+      #----------------------------------------------
+      - name: Check out repository
+        uses: actions/checkout@v3
+      #----------------------------------------------
+      #       setup node
+      #----------------------------------------------
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm install
+      #----------------------------------------------
+      #       build frontend
+      #----------------------------------------------
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build -- --base /Prod/
+      #----------------------------------------------
+      #       install AWS CLI
+      #----------------------------------------------
+      - name: Install AWS SAM CLI
+        uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+      #----------------------------------------------
+      #       configure AWS credentials
+      #----------------------------------------------
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: "arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/${{ env.AWS_PIPELINE_ROLE }}"
+      #----------------------------------------------
+      #       build app and deploy
+      #----------------------------------------------
+      - name: Build app artifacts
+        run: sam build --use-container
+      - name: Deploy app
+        run: |
+          sam deploy \
+            --stack-name ${{ env.STACK_NAME }} \
+            --region ${{ env.AWS_REGION }} \
+            --s3-bucket ${{ env.AWS_S3_ARTIFACTS_BUCKET }} \
+            --s3-prefix ${{ env.STACK_NAME }} \
+            --no-confirm-changeset \
+            --no-fail-on-empty-changeset \
+            --role-arn "arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/${{ env.AWS_CLOUD_FORMATION_ROLE }}" \
+            --capabilities CAPABILITY_IAM
