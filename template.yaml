@@ -4,6 +4,10 @@ Description: >
   SAM FastAPI Application
 
 Globals:
+  Api:
+    BinaryMediaTypes:
+      - "application/octet-stream"
+      - "image~1*"
   Function:
     Timeout: 5
     MemorySize: 128
