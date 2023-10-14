@@ -105,9 +105,23 @@ jobs:
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install --no-interaction --no-root --without code-qa
       #----------------------------------------------
-      #              run test suite
+      #              run unit test suite
       #----------------------------------------------
       - name: Run tests
         run: |
           source .venv/bin/activate
-          pytest
+          pytest tests/unit
+      #----------------------------------------------
+      #              run e2e test suite
+      #----------------------------------------------
+      - name: Run tests
+        run: |
+          source .venv/bin/activate
+          cd src
+          python -m uvicorn app.main:app --port 8080 &
+        env:
+          AWS_SAM_LOCAL: TRUE
+      - name: Run tests
+        run: |
+          source .venv/bin/activate
+          pytest tests/e2e
