@@ -12,6 +12,7 @@ mangum = "^0.17.0"
 pydantic = "<2.0.0"
 pydash = "^7.0.6"
 jinja2 = "^3.1.2"
+httpx = "^0.25.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.2"
