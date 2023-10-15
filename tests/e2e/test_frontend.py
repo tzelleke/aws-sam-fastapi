@@ -14,16 +14,23 @@ class Test_URL_Chrome(Basic_Chrome_Test):
         assert logo.exists()
         assert logo.width, logo.height == (125, 125)
 
-    def test_about_view(self):
-        h.click("About")
+    def test_nobel_prizes_view(self):
+        h.click("Nobel Prizes")
         h.wait_until(
-            h.Text("This is an about page").exists,
+            h.Text("AWARD YEAR").exists,
+            timeout_secs=1,
+        )
+
+    def test_nobel_laureates_view(self):
+        h.click("Nobel Laureates")
+        h.wait_until(
+            h.Text("BIRTH DATE").exists,
             timeout_secs=1,
         )
 
     def test_api_docs(self):
         h.click("API Docs")
         h.wait_until(
-            h.Text("FastAPI AWS SAM").exists,
+            h.Text("Nobel Prize API").exists,
             timeout_secs=1,
         )
