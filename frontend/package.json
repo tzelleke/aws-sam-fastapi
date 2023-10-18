@@ -12,6 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vueform/multiselect": "^2.6.6",
     "@vueuse/core": "^10.5.0",
     "@vueuse/integrations": "^10.5.0",
     "axios": "^1.5.1",
