@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink } from 'vue-router'
+import AppLink from '@/components/AppLink.vue'
 
 const docsUrl = import.meta.env.BASE_URL + 'docs'
 </script>
@@ -7,9 +7,9 @@ const docsUrl = import.meta.env.BASE_URL + 'docs'
 <template>
   <header>
     <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/nobel-prizes">Nobel Prizes</RouterLink>
-      <RouterLink to="/nobel-laureates">Nobel Laureates</RouterLink>
+      <AppLink to="/">Home</AppLink>
+      <AppLink to="/nobel-prizes">Nobel Prizes</AppLink>
+      <AppLink to="/nobel-laureates">Nobel Laureates</AppLink>
       <a :href="docsUrl">API Docs</a>
     </nav>
   </header>
