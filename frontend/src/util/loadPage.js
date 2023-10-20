@@ -10,6 +10,10 @@ export function loadPage(serverOptions, filter, execute) {
     if (filter.category) {
       params['nobel-prize-category'] = filter.category
     }
+    if (filter.yearRange) {
+      params['nobel-prize-year'] = filter.yearRange[0]
+      params['nobel-prize-year-to'] = filter.yearRange[1]
+    }
     console.log('Loading Page with params:', params)
     execute({ params })
   }

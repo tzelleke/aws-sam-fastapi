@@ -10,14 +10,21 @@ const prizeCategories = [
   { value: 'med', label: 'Physiology or Medicine' }
 ]
 
+const yearRangeSliderOptions = {
+  min: 1901,
+  max: 2023,
+  merge: 10
+}
+
 export const useFilterStore = defineStore('filter', () => {
   const filter = ref({
     category: null,
-    search: ''
+    yearRange: [1901, 2023]
   })
 
   return {
     filter,
-    prizeCategories
+    prizeCategories,
+    yearRangeSliderOptions
   }
 })
