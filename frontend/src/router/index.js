@@ -7,17 +7,25 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      components: {
+        default: HomeView
+      }
     },
     {
       path: '/nobel-prizes',
       name: 'nobel-prizes',
-      component: () => import('@/views/NobelPrizesView.vue')
+      components: {
+        default: () => import('@/views/NobelPrizesView.vue'),
+        filterBar: () => import('@/components/TheFilterBar.vue')
+      }
     },
     {
       path: '/nobel-laureates',
       name: 'nobel-laureates',
-      component: () => import('@/views/NobelLaureatesView.vue')
+      components: {
+        default: () => import('@/views/NobelLaureatesView.vue'),
+        filterBar: () => import('@/components/TheFilterBar.vue')
+      }
     }
   ]
 })
